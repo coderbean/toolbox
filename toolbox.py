@@ -3,6 +3,13 @@
 from datetime import *
 import time
 
+print("Cmd/Ctrl + D to exit\n")
 while True:
-    arg = input('intput your timestap: ')
-    print(datetime.fromtimestamp(int(arg)).strftime('%Y/%m/%d %H:%M:%S'))
+    try:
+        arg = input('intput your timestap: ')
+        print(datetime.fromtimestamp(int(arg)).strftime('%Y/%m/%d %H:%M:%S'))
+    except EOFError:
+        print("\nSee you next time.")
+        break;
+    except:
+        print("check your input!!! \n")
