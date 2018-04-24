@@ -7,7 +7,10 @@ print("Cmd/Ctrl + D to exit\n")
 while True:
     try:
         arg = input('intput your timestap: ')
-        print(datetime.fromtimestamp(int(arg)).strftime('%Y/%m/%d %H:%M:%S'))
+        if arg == '':
+            print (">>>>>>当前时间：{} <<<<<<<".format(int(time.time())))
+        else:
+            print(datetime.fromtimestamp(int(arg)).strftime('%Y/%m/%d %H:%M:%S'))
     except EOFError:
         print("\nSee you next time.")
         break;
